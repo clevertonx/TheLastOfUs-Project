@@ -19,10 +19,14 @@ const botaoFecharModal = document.querySelector(".fechar-modal");
 const video = document.getElementById("video");
 const modal = document.querySelector(".modal");
 const linkDoVideo = video.src;
-const botaoFungo = document.querySelector(".botao-fungo");
-var fungos = ['fungo1', 'fungo2', 'fungo3', 'fungo4'];
-var currentImage = 0;
-  
+let currentIndex = 0;
+  const elements = document.querySelectorAll(".leftfungo.fungo1, .rightfungo.fungo3, .topfungo.fungo5, .bottomfungo.fungo7,");
+  const button = document.querySelector(".botao-fungo");
+
+  button.addEventListener("click", function() {
+    elements[currentIndex].style.display = "block";
+    currentIndex = (currentIndex + 1) % elements.length;
+  });
 
 
 
