@@ -19,30 +19,41 @@ const botaoFecharModal = document.querySelector(".fechar-modal");
 const video = document.getElementById("video");
 const modal = document.querySelector(".modal");
 const linkDoVideo = video.src;
+const botaoClose = document.querySelector(".fechar-fungo");
 let currentIndex = 0;
-  const elements = document.querySelectorAll(".leftfungo.fungo1, .rightfungo.fungo3, .topfungo.fungo5, .bottomfungo.fungo7,");
-  const button = document.querySelector(".botao-fungo");
+const classes = [".leftfungo.fungo1", ".rightfungo.fungo3", ".topfungo.fungo5", ".bottomfungo.fungo7", ".leftfungo.fungo2", ".rightfungo.fungo4", ".topfungo.fungo6", ".bottomfungo.fungo8"];
+const button = document.querySelector(".botao-fungo");
 
-  button.addEventListener("click", function() {
-    elements[currentIndex].style.display = "block";
-    currentIndex = (currentIndex + 1) % elements.length;
+button.addEventListener("click", function () {
+  const currentElement = document.querySelector(classes[currentIndex]); currentElement.style.display = "block";
+  currentIndex = (currentIndex + 1) % classes.length;
+});
+
+botaoClose.addEventListener("click", function() {
+  classes.forEach(function(className) {
+    const element = document.querySelector(className);
+    element.style.display = "none";
   });
+});
+
 
 
 
 
 function alternarModal() {
-    modal.classList.toggle("aberto");
+  modal.classList.toggle("aberto");
 }
 botaoTrailer.addEventListener("click", () => {
-    alternarModal();
-    video.setAttribute("src", linkDoVideo);
+  alternarModal();
+  video.setAttribute("src", linkDoVideo);
 });
 
 botaoFecharModal.addEventListener("click", () => {
-    alternarModal();
-    video.setAttribute("src", "")
+  alternarModal();
+  video.setAttribute("src", "")
 });
+
+
 
 
 
