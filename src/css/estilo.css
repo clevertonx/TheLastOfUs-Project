@@ -145,7 +145,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 3em 3em;
-    background-color: rgb(247, 245, 245);
+    background-color: transparent;
     position: absolute;
     bottom: 0;
     border: none;
@@ -158,13 +158,15 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1em 1em;
-    background-color: rgb(247, 245, 245);
+    background-color: transparent;
+    color: white;
     position: absolute;
     bottom: 20px;
     left: 800px;
     border: none;
     border-radius: 4px;
     z-index: 1;
+    font-size: 2rem;
 }
 
 span.fa-solid.fa-mushroom {
